@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search Reddit</title>
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<link rel="stylesheet" href="css/style.css">
+
+		<meta name="title" content="Search Reddit" />
+		<meta name="description" content="Search Reddit for Images" />
+		
+	</head>
+	<body>
+
+		<form id="search-form" name="search-form" onsubmit="return search()">
+			<input type="search" id="query" class="search-field" placeholder=" Search Reddit...">
+			<input type="submit" name="search-btn" id="search-btn" value="">
+		</form>
+
+
+		<div class="container">
+			<ul id="results"></ul>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>
