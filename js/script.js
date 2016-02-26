@@ -12,13 +12,13 @@ function search() {
 		q: q}, function(data) {
 			var nextLoad = data.data.after;
 			$.each(data.data.children, function(i, item) {
-				// check url first
-				var output = render(item);
-				$('#results').append(output);
+				// if checkURL(item.data.url == true) {
+					var output = render(item);
+					$('#results').append(output);
+				// }
 			});
 		}
 	);
-	// show if empty
 }
 
 
@@ -48,17 +48,18 @@ function render(item) {
 	var url = item.data.url;
 	var title = item.data.title;
 	var output = '<li>' +
-	'<div class="list">' +
+	// '<div class="list">' +
 	'<a href="'+ url +'" target="_blank"><img src="'+url+'"></a>' +
-	'</div>' + '</li>' +
-	'<div class="clearfix"></div>' +'';
+	// '</div>' + 
+	'</li>';
+	// '<div class="clearfix"></div>' +'';
 	if (checkURL(url) == true) {
 		return output;
 	}
 }
 
 $(window).scroll(function() {
-        if ($(window).scrollTop() >= $(document).height() - $(window).height() - 300){
+        if ($(window).scrollTop() >= $(document).height() - $(window).height() - 400){
               nextLoad();
         }
 }); 
